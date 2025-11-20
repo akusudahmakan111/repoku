@@ -3,6 +3,6 @@
 int main(){
 
     printf("hello world");
-    printf("coba");
+    printf("cob");
     return 0;
 }
