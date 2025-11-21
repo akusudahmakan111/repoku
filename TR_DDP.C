@@ -1,4 +1,48 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <conio.h>
+#include <windows.h>
+
+void author(){
+    system("cls");
+    char title[] = "\n\n\t\t\t\t\t\tAUTHOR PROGRAM";
+    char line[] = "\n\t\t\t\t============================================";
+    for(int i = 0; title[i] != '\0'; i++){
+        printf("%c", title[i]);
+        Sleep(30);
+    }
+
+    for(int i = 0; line[i] != 0; i++){
+        printf("%c", line[i]);
+        Sleep(20);
+    }
+
+    const char* authors[] = {
+        "\n\n\t\t\t\tNama : Petrus Damianus Feba Mahendra",
+        "\n\t\t\t\tNIM  : 672024015",
+        "\n\n\t\t\t\tNama : Nama kalian",
+        "\n\t\t\t\tNIM  : Nim kalian",
+        "\n\n\t\t\t\tNama : Nama kalian",
+        "\n\t\t\t\tNIM  : Nim kalian",
+        "\n\n\t\t\t\tNama : Nama kalian",
+        "\n\t\t\t\tNIM  : Nim kalian",
+        "\n\n\t\t\t\tNama : Nama kalian",
+        "\n\t\t\t\tNIM  : Nim kalian"
+    };
+
+    for(int i = 0; i < sizeof(authors) / sizeof(authors[0]); i++){
+        for(int j = 0; authors[i][j] != 0 ; j++){
+            printf("%c", authors[i][j]);
+            Sleep(20);
+        }
+    }
+
+    printf("\n\n\t\t\t\t=============================================\n");
+    printf("\n\t\t\t\t    Tekan tombol apapun untuk kembali...");
+    getch();
+    system("cls");
+}
 
 int pilih;
 
@@ -31,6 +75,7 @@ void menu(){
         menu();
         break;
     case 6:
+        author();
         menu();
         break;
     case 7:
