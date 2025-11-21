@@ -61,28 +61,48 @@ void menu(){
 
     switch(pilih){
     case 1:
+        system("cls");
+        printf("\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\tTunggu sebentar...");
+        Sleep(2000);
         menu();
         break;
     case 2:
+        system("cls");
+        printf("\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\tTunggu sebentar...");
+        Sleep(2000);
         menu();
         break;
     case 3:
+        system("cls");
+        printf("\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\tTunggu sebentar...");
+        Sleep(2000);
         menu();
         break;
     case 4:
+        system("cls");
+        printf("\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\tTunggu sebentar...");
+        Sleep(2000);
         menu();
         break;
     case 5:
+        system("cls");
+        printf("\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\tTunggu sebentar...");
+        Sleep(2000);
         menu();
         break;
     case 6:
+        system("cls");
+        printf("\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\tTunggu sebentar...");
+        Sleep(2000);
         author();
         menu();
         break;
     case 7:
         break;
     default:
-        printf("Pilih anda tidak ada di menu, silahkan pilih lagi!\n");
+        printf("\n\n\n\n\n\n\n\n\n\t\t\t\tPilihan anda tidak ada di menu, silahkan pilih lagi!\n");
+        Sleep(2000);
+        system("cls");
         menu();
         break;
 }
@@ -98,11 +118,15 @@ int main()
     scanf("%d", &pass);
     system("cls");
 
-    if (nama[100] == check_nama[100] && pass == check_pass){
-        printf("\n");
+    if (strcmp(nama, check_nama) == 0 && pass == check_pass){
+        printf("\n\n\n\n\n\n\n\n\n\t\t\t\t\t\tLogin Berhasil!\n");
+        Sleep(2000);
+        system("cls");
         menu();
     }else{
-        printf("Username/password salah, coba lagi!\n");
+        printf("\n\n\n\n\n\n\n\n\n\t\t\t\t\tUsername/password salah, coba lagi!\n");
+        Sleep(2000);
+        system("cls");
         main();
     }
 
