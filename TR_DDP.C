@@ -5,6 +5,7 @@
 #include <windows.h>
 
 void author(){
+    system("cls");
     char title[] = "\n\n\t\t\t\t\t\tAUTHOR PROGRAM";
     char line[] = "\n\t\t\t\t============================================";
     for(int i = 0; title[i] != '\0'; i++){
