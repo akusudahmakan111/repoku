@@ -37,7 +37,7 @@ void author(){
             Sleep(20);
         }
     }
-    
+
     printf("\n\n\t\t\t\t=============================================\n");
     printf("\n\t\t\t\t    Tekan tombol apapun untuk kembali...");
     getch();
@@ -76,6 +76,7 @@ void menu(){
         break;
     case 6:
         author();
+        menu();
         break;
     case 7:
         break;
