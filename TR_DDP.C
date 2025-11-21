@@ -47,7 +47,7 @@ void author(){
 int pilih;
 
 void menu(){
-    printf("\n\n\n\n\t\t\t\t\t\t====== Menu ===\n");
+    printf("\n\n\n\n\t\t\t\t\t\t====== Menu ======\n");
     printf("\n\t\t\t\t\t\t1. Rumah Pola\n");
     printf("\n\t\t\t\t\t\t2. Restoran\n");
     printf("\n\t\t\t\t\t\t3. Batu Gunting Kertas\n");
