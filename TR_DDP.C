@@ -47,16 +47,17 @@ void author(){
 int pilih;
 
 void menu(){
-    printf("=== Menu ===\n");
-    printf("1. Rumah Pola\n");
-    printf("2. Restoran\n");
-    printf("3. Batu Gunting Kertas\n");
-    printf("4. Bendera\n");
-    printf("5. Hotel\n");
-    printf("6. Author\n");
-    printf("7. Exit\n");
-    printf("Pilihan : ");
+    printf("\n\n\n\n\t\t\t\t\t\t====== Menu ===\n");
+    printf("\n\t\t\t\t\t\t1. Rumah Pola\n");
+    printf("\n\t\t\t\t\t\t2. Restoran\n");
+    printf("\n\t\t\t\t\t\t3. Batu Gunting Kertas\n");
+    printf("\n\t\t\t\t\t\t4. Bendera\n");
+    printf("\n\t\t\t\t\t\t5. Hotel\n");
+    printf("\n\t\t\t\t\t\t6. Author\n");
+    printf("\n\t\t\t\t\t\t7. Exit\n");
+    printf("\n\t\t\t\t\t\tPilihan : ");
     scanf("%d", &pilih);
+    system("cls");
 
     switch(pilih){
     case 1:
@@ -91,16 +92,17 @@ int main()
 {
     char nama[100], check_nama[]="Admin";
     int pass, check_pass = 666;
-    printf("Username : ");
+    printf("\n\n\n\n\n\n\n\n\n\t\t\t\t\t\tUsername : ");
     scanf("%s", &nama);
-    printf("Password : ");
+    printf("\t\t\t\t\t\tPassword : ");
     scanf("%d", &pass);
+    system("cls");
 
     if (nama[100] == check_nama[100] && pass == check_pass){
         printf("\n");
         menu();
     }else{
-        printf("Username/password salah\n");
+        printf("Username/password salah, coba lagi!\n");
         main();
     }
 
