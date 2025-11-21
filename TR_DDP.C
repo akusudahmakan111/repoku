@@ -47,51 +47,60 @@ void author(){
 int pilih;
 
 void menu(){
-    printf("\n\n\n\n\t\t\t\t\t\t====== Menu ======\n");
-    printf("\n\t\t\t\t\t\t1. Rumah Pola\n");
-    printf("\n\t\t\t\t\t\t2. Restoran\n");
-    printf("\n\t\t\t\t\t\t3. Batu Gunting Kertas\n");
-    printf("\n\t\t\t\t\t\t4. Bendera\n");
-    printf("\n\t\t\t\t\t\t5. Hotel\n");
-    printf("\n\t\t\t\t\t\t6. Author\n");
-    printf("\n\t\t\t\t\t\t7. Exit\n");
-    printf("\n\t\t\t\t\t\tPilihan : ");
+    printf("\n\n\n\n\n\n\n\t\t\t\t\t\t#########################\n");
+    printf("\t\t\t\t\t\t#       KELOMPOK 3      #\n");
+    printf("\t\t\t\t\t\t#########################\n");
+    printf("\t\t\t\t\t\t#1. Rumah Pola\t\t#\n");
+    printf("\t\t\t\t\t\t#2. Restoran\t\t#\n");
+    printf("\t\t\t\t\t\t#3. Batu Gunting Kertas #\n");
+    printf("\t\t\t\t\t\t#4. Bendera\t\t#\n");
+    printf("\t\t\t\t\t\t#5. Hotel\t\t#\n");
+    printf("\t\t\t\t\t\t#6. Author\t\t#\n");
+    printf("\t\t\t\t\t\t#7. Exit\t\t#\n");
+    printf("\t\t\t\t\t\t#########################\n");
+    printf("\t\t\t\t\t\tPilihan : ");
     scanf("%d", &pilih);
     system("cls");
 
     switch(pilih){
     case 1:
         system("cls");
+        Sleep(500);
         printf("\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\tTunggu sebentar...");
         Sleep(2000);
         menu();
         break;
     case 2:
         system("cls");
+        Sleep(500);
         printf("\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\tTunggu sebentar...");
         Sleep(2000);
         menu();
         break;
     case 3:
         system("cls");
+        Sleep(500);
         printf("\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\tTunggu sebentar...");
         Sleep(2000);
         menu();
         break;
     case 4:
         system("cls");
+        Sleep(500);
         printf("\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\tTunggu sebentar...");
         Sleep(2000);
         menu();
         break;
     case 5:
         system("cls");
+        Sleep(500);
         printf("\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\tTunggu sebentar...");
         Sleep(2000);
         menu();
         break;
     case 6:
         system("cls");
+        Sleep(500);
         printf("\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\tTunggu sebentar...");
         Sleep(2000);
         author();
@@ -112,6 +121,16 @@ int main()
 {
     char nama[100], check_nama[]="Admin";
     int pass, check_pass = 666;
+
+    system("color 1F");
+
+    printf("\n\n\n\n\n\n\n\n\n\t\t\t\tSelamat Datang di Tugas Rancang Kelompok 3!\n\n\n\n");
+    Sleep(1500);
+    printf("\t\t\t\t\t\tMohon Tunggu...");
+    Sleep(2000);
+    system("cls");
+
+    Sleep(500);
     printf("\n\n\n\n\n\n\n\n\n\t\t\t\t\t\tUsername : ");
     scanf("%s", &nama);
     printf("\t\t\t\t\t\tPassword : ");
@@ -119,9 +138,13 @@ int main()
     system("cls");
 
     if (strcmp(nama, check_nama) == 0 && pass == check_pass){
-        printf("\n\n\n\n\n\n\n\n\n\t\t\t\t\t\tLogin Berhasil!\n");
-        Sleep(2000);
+        Sleep(500);
+        printf("\n\n\n\n\n\n\n\n\n\t\t\t\t\t\tLogin Berhasil!\n\n");
+        Sleep(1500);
+        printf("\t\t\t\t\t\Tekan apa saja untuk melanjutkan");
+        getch();
         system("cls");
+        Sleep(1000);
         menu();
     }else{
         printf("\n\n\n\n\n\n\n\n\n\t\t\t\t\tUsername/password salah, coba lagi!\n");
