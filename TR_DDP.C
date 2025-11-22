@@ -5,6 +5,64 @@
 #include <windows.h>
 #include <time.h>
 
+// NAGIAN RUMAH POLA
+void warna(int bg, int fg){
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), (bg << 4) | fg);
+}
+
+void rumahpola()
+{
+
+    system("cls");
+    int background = 2; // hijau
+
+    int tinggi;
+    char pola;
+    char ulang;
+        system("color 2F");
+        system("cls");
+        printf("+==============================================+\n");
+        printf("||                 Rumah Pola                 ||\n");
+        printf("+==============================================+\n");
+        printf("    Tentukan tinggi             : ");
+        scanf("%d", &tinggi);
+        printf("    Masukkan Bahan Rumah        : ");
+        scanf(" %c", &pola);
+        printf("\n\n");
+
+
+        for (int i = 1; i<=tinggi; i++){
+            for (int j = i; j<tinggi; j++){
+                printf(" ");
+            }
+            warna(background,14);
+            for (int j = 1; j<=i; j++){
+                printf("%c ", pola);
+            }
+            warna(background,4);
+            for(int j = 1; j<=tinggi*3; j++){
+                printf("%c ", pola);
+            }
+            printf("\n");
+        }
+
+        for(int i = 1; i<=tinggi; i++){
+                warna(background,15);
+            for(int j = 1; j<=tinggi; j++){
+                printf("%c ", pola);
+            }
+            warna(background,5);
+            for(int j = 1; j<=tinggi*3; j++){
+                printf("%c ", pola);
+            }
+            printf("\n");
+        }
+
+        warna(background,7);
+
+}
+
+
 // BAGIAN PROGRAM HOTEL
 #define MAX 100
 
@@ -56,7 +114,7 @@ void tambah_tamu(){
 
     printf("Masukkan nomor kamar: ");
     scanf("%d", &daftar_tamu[banyaktamu].nomor_kamar);
-    
+
     printf("Masukkan lama menginap: ");
     scanf("%d", &daftar_tamu[banyaktamu].lama_menginap);
 
@@ -162,7 +220,7 @@ void hapus_tamu(){
 
 void hotel(){
     int menu;
-    
+
     do{
         system("cls");
         printf("\n\n\n\n\n\n\n\t\t\t\t\t\t==============================\n");
@@ -189,7 +247,7 @@ void hotel(){
         default:
             printf("Menu tidak valid!\n");
         }
-        
+
     } while (menu != 5);
     loading_hotel();
 }
@@ -258,6 +316,7 @@ void menu(){
         Sleep(500);
         printf("\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\tTunggu sebentar...");
         Sleep(2000);
+        rumahpola();
         menu();
         break;
     case 2:
