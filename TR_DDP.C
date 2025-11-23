@@ -62,6 +62,55 @@ void rumahpola()
 
 }
 
+// Bagian Bendera
+#define RED "\033[41m"
+#define WHITE "\033[47m"
+#define BLUE "\033[44m"
+
+void BenderaIndonesia(int tinggi) {
+    int tinggiPerBagian = tinggi;
+    int lebar = tinggi*4;
+
+    for (int i = 0; i < tinggi*2; i++) {
+        if (i < tinggiPerBagian) {
+            printf(RED);
+        } else {
+            printf(WHITE);
+        };
+
+        for (int j = 0; j < lebar; j++) {
+            printf(" ");
+            Sleep(20);
+        }
+        printf(BLUE"\n");
+    }
+}
+
+void Bendera() {
+    int tinggi;
+    char pilihan;
+    do {
+        system("cls");
+        printf("===================================\n");
+        printf("=             Bendera             =\n");
+        printf("===================================\n");
+        printf("Masukkan tinggi bendera: ");
+        scanf("%d", &tinggi);
+
+        printf("\nBendera Indonesia:\n");
+        BenderaIndonesia(tinggi);
+
+        printf("\n===================================\n");
+        printf("Pilihan:\n");
+        printf("1. Ulang\n");
+        printf("2. Exit\n");
+        printf("Pilihan Anda: ");
+        scanf(" %c", &pilihan);
+
+    } while (pilihan == '1');
+    system("cls");
+
+}
 
 // BAGIAN PROGRAM HOTEL
 #define MAX 100
@@ -267,14 +316,14 @@ void author(){
     }
 
     const char* authors[] = {
+        "\n\n\t\t\t\tNama : Nama kalian",
+        "\n\t\t\t\tNIM  : Nim kalian",
+        "\n\n\t\t\t\tNama : Nama kalian",
+        "\n\t\t\t\tNIM  : Nim kalian",
+        "\n\n\t\t\t\tNama : Nama kalian",
+        "\n\t\t\t\tNIM  : Nim kalian",
         "\n\n\t\t\t\tNama : Petrus Damianus Feba Mahendra",
         "\n\t\t\t\tNIM  : 672024015",
-        "\n\n\t\t\t\tNama : Nama kalian",
-        "\n\t\t\t\tNIM  : Nim kalian",
-        "\n\n\t\t\t\tNama : Nama kalian",
-        "\n\t\t\t\tNIM  : Nim kalian",
-        "\n\n\t\t\t\tNama : Nama kalian",
-        "\n\t\t\t\tNIM  : Nim kalian",
         "\n\n\t\t\t\tNama : Nama kalian",
         "\n\t\t\t\tNIM  : Nim kalian"
     };
@@ -338,6 +387,7 @@ void menu(){
         Sleep(500);
         printf("\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\tTunggu sebentar...");
         Sleep(2000);
+        Bendera();
         menu();
         break;
     case 5:
@@ -391,7 +441,7 @@ int main()
         Sleep(500);
         printf("\n\n\n\n\n\n\n\n\n\t\t\t\t\t\tLogin Berhasil!\n\n");
         Sleep(1500);
-        printf("\t\t\t\t\t\Tekan apa saja untuk melanjutkan");
+        printf("\t\t\t\t\t Tekan apa saja untuk melanjutkan");
         getch();
         system("cls");
         Sleep(1000);
