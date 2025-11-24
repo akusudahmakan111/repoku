@@ -5,27 +5,31 @@
 #include <windows.h>
 #include <time.h>
 
-// NAGIAN RUMAH POLA
+// bAGIAN RUMAH POLA
 void warna(int bg, int fg){
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), (bg << 4) | fg);
+
 }
 
 void rumahpola()
 {
 
     system("cls");
-    int background = 2; // hijau
-
+    int background = 1; // biru
+    Sleep(1500);
+        printf("\nTekan apa saja untuk melanjutkan");
+        getch();
+        system("cls");
     int tinggi;
     char pola;
     char ulang;
-        system("color 2F");
+        system("color 1F");
         system("cls");
         printf("+==============================================+\n");
         printf("||                 Rumah Pola                 ||\n");
         printf("+==============================================+\n");
         printf("    Tentukan tinggi             : ");
-        scanf("%d", &tinggi);
+        scanf(" %d", &tinggi);
         printf("    Masukkan Bahan Rumah        : ");
         scanf(" %c", &pola);
         printf("\n\n");
