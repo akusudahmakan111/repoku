@@ -321,8 +321,8 @@ void author(){
     const char* authors[] = {
         "\n\n\t\t\t\tNama : Nama kalian",
         "\n\t\t\t\tNIM  : Nim kalian",
-        "\n\n\t\t\t\tNama : Nama kalian",
-        "\n\t\t\t\tNIM  : Nim kalian",
+        "\n\n\t\t\t\tNama : Mitchell Ardiza Wijayanto",
+        "\n\t\t\t\tNIM  : 672025072",
         "\n\n\t\t\t\tNama : Nama kalian",
         "\n\t\t\t\tNIM  : Nim kalian",
         "\n\n\t\t\t\tNama : Petrus Damianus Feba Mahendra",
