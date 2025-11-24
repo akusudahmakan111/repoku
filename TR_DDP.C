@@ -8,7 +8,6 @@
 // bAGIAN RUMAH POLA
 void warna(int bg, int fg){
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), (bg << 4) | fg);
-
 }
 
 void rumahpola()
@@ -16,10 +15,6 @@ void rumahpola()
 
     system("cls");
     int background = 1; // biru
-    Sleep(1500);
-        printf("\nTekan apa saja untuk melanjutkan");
-        getch();
-        system("cls");
     int tinggi;
     char pola;
     char ulang;
@@ -55,7 +50,7 @@ void rumahpola()
             for(int j = 1; j<=tinggi; j++){
                 printf("%c ", pola);
             }
-            warna(background,5);
+            warna(background,6);
             for(int j = 1; j<=tinggi*3; j++){
                 printf("%c ", pola);
             }
@@ -63,8 +58,9 @@ void rumahpola()
         }
 
         warna(background,7);
+
         Sleep(1500);
-        printf("\nTekan apa saja untuk kembali");
+        printf("\nTekan apa saja untuk melanjutkan");
         getch();
         system("cls");
 }
@@ -325,8 +321,8 @@ void author(){
     const char* authors[] = {
         "\n\n\t\t\t\tNama : Nama kalian",
         "\n\t\t\t\tNIM  : Nim kalian",
-        "\n\n\t\t\t\tNama : Mikhael Gusti Hamurdani",
-        "\n\t\t\t\tNIM  : 672025064",
+        "\n\n\t\t\t\tNama : Nama kalian",
+        "\n\t\t\t\tNIM  : Nim kalian",
         "\n\n\t\t\t\tNama : Nama kalian",
         "\n\t\t\t\tNIM  : Nim kalian",
         "\n\n\t\t\t\tNama : Petrus Damianus Feba Mahendra",
