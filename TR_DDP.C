@@ -63,7 +63,10 @@ void rumahpola()
         }
 
         warna(background,7);
-
+        Sleep(1500);
+        printf("\nTekan apa saja untuk kembali");
+        getch();
+        system("cls");
 }
 
 // Bagian Bendera
@@ -322,8 +325,8 @@ void author(){
     const char* authors[] = {
         "\n\n\t\t\t\tNama : Nama kalian",
         "\n\t\t\t\tNIM  : Nim kalian",
-        "\n\n\t\t\t\tNama : Nama kalian",
-        "\n\t\t\t\tNIM  : Nim kalian",
+        "\n\n\t\t\t\tNama : Mikhael Gusti Hamurdani",
+        "\n\t\t\t\tNIM  : 672025064",
         "\n\n\t\t\t\tNama : Nama kalian",
         "\n\t\t\t\tNIM  : Nim kalian",
         "\n\n\t\t\t\tNama : Petrus Damianus Feba Mahendra",
