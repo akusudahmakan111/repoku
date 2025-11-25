@@ -544,8 +544,8 @@ void author(){
         "\n\t\t\t\tNIM  : 672025083",
         "\n\n\t\t\t\tNama : Petrus Damianus Feba Mahendra",
         "\n\t\t\t\tNIM  : 672024015",
-        "\n\n\t\t\t\tNama : Nama kalian",
-        "\n\t\t\t\tNIM  : Nim kalian"
+        "\n\n\t\t\t\tNama : Yehezkiel Donato Raharjo",
+        "\n\t\t\t\tNIM  : 672025070"
     };
 
     for(int i = 0; i < sizeof(authors) / sizeof(authors[0]); i++){
