@@ -5,6 +5,221 @@
 #include <windows.h>
 #include <time.h>
 
+// BAGIAN BATU GUNTING KERTAS
+void pvc()
+{
+    int user,komputer,ulang;
+    system("cls");
+    printf("\t\t\t\t\t+-----------------------------+\n");
+    printf("\t\t\t\t\t|          PERMAINAN          |\n");
+    printf("\t\t\t\t\t|     BATU GUNTING KERTAS     |\n");
+    printf("\t\t\t\t\t+-----------------------------+\n");
+    printf("\t\t\t\t\t|     PLAYER VS KOMPUTER      |\n");
+    printf("\t\t\t\t\t+-----------------------------+\n");
+    printf("\n\t\t\t\t\tMasukkan pilihan anda : \n");
+    printf("\t\t\t\t\t1. Batu\n");
+    printf("\t\t\t\t\t2. Gunting\n");
+    printf("\t\t\t\t\t3. Kertas\n");
+    printf("\t\t\t\t\t4. Keluar\n");
+    printf("\t\t\t\t\tPilihan (1-4) : ");scanf("%d", &user);
+
+    while(user<1 || user>4){
+        Sleep(1000);
+        printf("\x1b[1F");
+        printf("\x1b[2K");
+        printf("\t\t\t\t\tMasukkan ulang (1-4) : ");scanf("%d",&user);
+    }
+
+    if (user==4){
+        printf("\t\t\t\t\tTerimakasih sudah bermain");
+        Sleep(2000);
+        system("cls");
+    }
+
+    srand(time(NULL));
+    komputer=rand() %3+1;
+
+
+    if (user >0 && user <4){
+        printf("\t\t\t\t\tKomputer memilih: ");
+        if (komputer==1) printf("Batu\n");
+        else if (komputer==2) printf("Gunting\n");
+        else printf("Kertas\n");
+
+        if (user==komputer) {
+        printf("\t\t\t\t\tSeri!\n");
+        } else if ((user==1 && komputer==2) ||
+            (user==2 && komputer==3) ||
+            (user==3 && komputer==1)) {
+        printf("\t\t\t\t\tKamu Menang!\n");
+        }else{
+        printf("\t\t\t\t\tKamu Kalah!\n");
+        }
+
+        printf("\n\t\t\t\t\tApakah ingin bermain lagi? (y/t) : "); scanf(" %c", &ulang);
+        while(1){
+            if (ulang == 'y' || ulang == 'Y'){
+                pvc();
+                break;
+            }else if (ulang == 't' || ulang == 'T'){
+                printf("\t\t\t\t\tTerimakasih sudah bermain..");
+                Sleep(1000);
+                system("cls");
+
+                break;
+            } else{
+                printf("\x1b[2K");
+                printf("\x1b[1F");
+                printf("\n\t\t\t\t\tMasukkan ulang (y/t) : ");scanf("%c",&ulang);
+            }
+        }
+    }
+}
+
+void pvp() {
+    int player1, player2;
+    char ulang;
+
+    do {
+        system("cls");
+        printf("\t\t\t\t\t+-----------------------------+\n");
+        printf("\t\t\t\t\t|          PERMAINAN          |\n");
+        printf("\t\t\t\t\t|     BATU GUNTING KERTAS     |\n");
+        printf("\t\t\t\t\t+-----------------------------+\n");
+        printf("\t\t\t\t\t|      PLAYER VS PLAYER       |\n");
+        printf("\t\t\t\t\t+-----------------------------+\n");
+        printf("\n\t\t\t\t\tMasukkan pilihan Player 1 : \n");
+        printf("\t\t\t\t\t1. Batu\n");
+        printf("\t\t\t\t\t2. Gunting\n");
+        printf("\t\t\t\t\t3. Kertas\n");
+        printf("\t\t\t\t\t4. Keluar\n");
+        printf("\t\t\t\t\tPilihan (1-4) : ");
+
+        char ch;
+        player1 = 0;
+
+        while(1){
+            ch = getch();
+            if(ch == 13) break;
+            if(ch >= '1' && ch <= '4'){
+                player1 = ch - '0';
+                printf("*");
+                break;
+            }
+        }
+
+        getch();
+        if (player1 == 4){
+            printf("\n\t\t\t\t\tTerimakasih sudah bermain...");
+            Sleep(2000);
+            system("cls");
+            return;
+        }
+
+        Sleep(1000);
+        system("cls");
+        printf("\t\t\t\t\t+-----------------------------+\n");
+        printf("\t\t\t\t\t|          PERMAINAN          |\n");
+        printf("\t\t\t\t\t|     BATU GUNTING KERTAS     |\n");
+        printf("\t\t\t\t\t+-----------------------------+\n");
+        printf("\t\t\t\t\t|      PLAYER VS PLAYER       |\n");
+        printf("\t\t\t\t\t+-----------------------------+\n");
+        printf("\n\t\t\t\t\tMasukkan pilihan Player 2 : \n");
+        printf("\t\t\t\t\t1. Batu\n");
+        printf("\t\t\t\t\t2. Gunting\n");
+        printf("\t\t\t\t\t3. Kertas\n");
+        printf("\t\t\t\t\t4. Keluar\n");
+        printf("\t\t\t\t\tPilihan (1-4) : ");
+
+        char ch2;
+        player2 = 0;
+
+        while(1){
+            ch2 = getch();
+            if(ch2 == 13) break;
+            if(ch2 >= '1' && ch2 <= '4'){
+                player2 = ch2 - '0';
+                printf("*");
+                break;
+            }
+        }
+        getch();
+
+        if (player2 == 4){
+            printf("\n\t\t\t\t\tTerimakasih sudah bermain...");
+            Sleep(2000);
+            system("cls");
+            return;
+        }
+
+
+        if (player1==1){
+        printf("\n\t\t\t\t\tPlayer 1 : Batu\n");
+        }else if(player1==2) {
+        printf("\n\t\t\t\t\tPLayer 1 : Gunting\n");
+        }else{
+        printf("\n\t\t\t\t\tPLayer 1 : Kertas\n");
+        }
+
+        if (player2==1){
+        printf("\t\t\t\t\tPlayer 2 : Batu\n");
+        }else if(player2==2) {
+        printf("\t\t\t\t\tPLayer 2 : Gunting\n");
+        }else{
+        printf("\t\t\t\t\tPLayer 2 : Kertas\n");
+        }
+
+        if (player1 == player2) {
+            printf("\n\t\t\t\t\tSeri!\n");
+        }else if ((player1==1 && player2==2) ||
+                 (player1==2 && player2==3) ||
+                 (player1==3 && player2==1)) {
+            printf("\n\t\t\t\t\tPlayer 1 Menang!\n");
+        }else{
+            printf("\n\t\t\t\t\tPlayer 2 Menang!\n");
+        }
+
+        printf("\n\t\t\t\t\tApakah ingin bermain lagi? (y/t) : ");
+        scanf(" %c", &ulang);
+
+    } while(ulang == 'y' || ulang == 'Y');
+    printf("\n\t\t\t\t\tTerimakasih sudah bermain...");
+    Sleep(2000);
+    system("cls");
+}
+
+void menubgk()
+{
+    int pilihanmode;
+    printf("\t\t\t\t\t+-----------------------------+\n");
+    printf("\t\t\t\t\t|          PERMAINAN          |\n");
+    printf("\t\t\t\t\t|     BATU GUNTING KERTAS     |\n");
+    printf("\t\t\t\t\t+-----------------------------+\n\n");
+    printf("\t\t\t\t\tSilahkan pilih mode permainan\n");
+    printf("\t\t\t\t\t1. Player vs Komputer\n");
+    printf("\t\t\t\t\t2. Player vs Player\n");
+    printf("\t\t\t\t\t3. Kembali ke menu\n");
+    printf("\t\t\t\t\tPilihan (1-3) : "); scanf("%d" ,&pilihanmode);
+
+    switch (pilihanmode){
+    case 1 :
+        pvc();
+        menubgk();
+        break;
+    case 2 :
+        pvp();
+        menubgk();
+        break;
+    case 3 :
+        system("cls");
+        break;
+    default :
+        system("cls");
+        printf("\t\t\t\t\tMasukkan pilihan dengan benar!!\n\n");
+        menubgk();
+    }
+}
+
 // bAGIAN RUMAH POLA
 void warna(int bg, int fg){
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), (bg << 4) | fg);
@@ -325,8 +540,8 @@ void author(){
         "\n\t\t\t\tNIM  : 672025072",
         "\n\n\t\t\t\tNama : Mikhael Gusti Hamurdani",
         "\n\t\t\t\tNIM  : 672025064",
-        "\n\n\t\t\t\tNama : Nama kalian",
-        "\n\t\t\t\tNIM  : Nim kalian",
+        "\n\n\t\t\t\tNama : Jethro Zelig Matalino",
+        "\n\t\t\t\tNIM  : 672025083",
         "\n\n\t\t\t\tNama : Petrus Damianus Feba Mahendra",
         "\n\t\t\t\tNIM  : 672024015",
         "\n\n\t\t\t\tNama : Nama kalian",
@@ -385,6 +600,8 @@ void menu(){
         Sleep(500);
         printf("\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\tTunggu sebentar...");
         Sleep(2000);
+        system("cls");
+        menubgk();
         menu();
         break;
     case 4:
