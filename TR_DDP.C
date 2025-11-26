@@ -280,6 +280,210 @@ void rumahpola()
         system("cls");
 }
 
+//BAGIAN RESTORAN
+char nama_menu[10][30] = {
+    "Nasi Goreng", "Mie Goreng", "Cap Cay", "Ayam Bakar", "Ikan Bakar",
+    "Air Mineral", "Es Teh", "Es Jeruk", "Soda Gembira", "Es Kelapa"
+};
+
+int harga_menu[10] = {
+    15000, 10000, 12000, 20000, 25000, 5000, 4000, 6000, 15000, 10000
+};
+
+int keranjang_idx[100];
+int keranjang_qty[100];
+long keranjang_total[100];
+int jumlah_item = 0;
+long total_tagihan = 0;
+
+
+void tampilkan_menu_manual(){
+    printf("                    Selamat datang di Restaurant kami\n");
+    printf("                 Silahkan pilih menu yang anda inginkan :\n");
+
+    printf("======================================================================\n");
+    printf("MENU MAKANAN          :   MENU MINUMAN\n");
+    printf("\n");
+    printf("|NO.|  MAKANAN     |   HARGA     |   |NO.|  MINUMAN      |   HARGA     |\n");
+    printf("==============================================================================\n");
+
+    printf("|1. | Nasi Goreng  |   Rp 15.000 |   |6. | Air Mineral   |   Rp 5.000  |\n");
+    printf("|2. | Mie Goreng   |   Rp 10.000 |   |7. | Es Teh        |   Rp 4.000  |\n");
+    printf("|3. | Cap Cay      |   Rp 12.000 |   |8. | Es Jeruk      |   Rp 6.000  |\n");
+    printf("|4. | Ayam Bakar   |   Rp 20.000 |   |9. | Soda Gembira  |   Rp 15.000 |\n");
+    printf("|5. | Ikan Bakar   |   Rp 25.000 |   |10.| Es Kelapa     |   Rp 10.000 |\n");
+
+    printf("\n");
+    printf("55. Struk Pembayaran\n");
+    printf("44. Reset Pilihan\n");
+    printf("99. Keluar\n");
+
+}
+
+void proses_catat(int nomor, int qty){
+    int idx = nomor - 1;
+    long subtotal = (long)harga_menu[idx] * qty;
+
+    keranjang_idx[jumlah_item] = idx;
+    keranjang_qty[jumlah_item] = qty;
+    keranjang_total[jumlah_item] = subtotal;
+
+    total_tagihan += subtotal;
+    jumlah_item++;
+}
+
+void cetak_struk(){
+    long bayar = 0;
+    long kembalian = 0;
+
+    time_t t;
+    struct tm *tmp;
+    char waktu[50];
+    time(&t);
+    tmp = localtime(&t);
+    strftime(waktu, sizeof(waktu), "%a %b %d %H:%M:%S %Y", tmp);
+
+    if(jumlah_item == 0){
+        system("cls");
+        printf("\nBelum ada pesanan! Tekan Enter...");
+        getchar();
+        return;
+    }
+
+    system("cls");
+
+    printf("PESANAN MAKANAN & MINUMAN\n");
+    printf("Nama pesanan | Harga | Jumlah | Total\n");
+    printf("====================================================\n");
+
+    for(int i=0; i<jumlah_item; i++){
+        int idx = keranjang_idx[i];
+        printf("%-12s | Rp. %-6d | %-6d | Rp.%-8ld\n",
+               nama_menu[idx], harga_menu[idx], keranjang_qty[i], keranjang_total[i]);
+    }
+
+    printf("====================================================\n");
+    printf("Total harga Adalah = Rp%ld,-\n", total_tagihan);
+    printf("====================================================\n");
+
+    while(1){
+        printf("Masukkan Uang bayar= ");
+        if(scanf("%ld", &bayar) != 1){
+            printf(">> Input salah! Masukkan angka.\n");
+            while(getchar()!='\n');
+            continue;
+        }
+        while(getchar()!='\n');
+
+        if(bayar >= total_tagihan) break;
+        else printf(">> Uang kurang! Coba lagi.\n\n");
+    }
+
+    kembalian = bayar - total_tagihan;
+    printf("\nKembalian = Rp.%ld\n", kembalian);
+    printf("Tekan Apa Saja Untuk Melihat Struck Pembayaran\n");
+    printf("Press any key to continue . . .\n");
+    getchar();
+
+    system("cls");
+
+    printf("----------------------------------------------------------------------\n");
+    printf("|                                                                    |\n");
+    printf("|                         Restaurant Kami                            |\n");
+    printf("|                          TR ASDOS H                                |\n");
+    printf("|                                                                    |\n");
+    printf("| Nama Pesanan  | Harga Satuan | Jumlah | Total                      |\n");
+    printf("|====================================================================|\n");
+
+    for(int i=0; i<jumlah_item; i++){
+        int idx = keranjang_idx[i];
+        printf("| %-12s  | Rp. %-7d  | %-6d | Rp.%-10ld                |\n",
+               nama_menu[idx], harga_menu[idx], keranjang_qty[i], keranjang_total[i]);
+    }
+
+    printf("| Total Keseluruhan = Rp.%-10ld                                    |\n", total_tagihan);
+    printf("| Bayar             = Rp.%-10ld                                    |\n", bayar);
+    printf("| Kembalian         = Rp.%-10ld                                    |\n", kembalian);
+    printf("|                                                                    |\n");
+    printf("|                              Thank You                             |\n");
+    printf("| Waktu/Hari : %s                                   |\n", waktu);
+    printf("| perhatian : Barang Yang dibeli tidak bisa dikembalikan             |\n");
+    printf("|                                                                    |\n");
+    printf("----------------------------------------------------------------------\n");
+
+    printf("Tekan Enter untuk kembali ke menu utama...");
+    getchar();
+}
+
+void restoran(){
+    int pilihan = 0;
+    int kuantitas = 0;
+    char konfirmasi_keluar;
+
+    system("cls");
+    tampilkan_menu_manual();
+
+    do {
+        if(jumlah_item > 0){
+             printf("\n================================================\n");
+        }
+
+        printf("\nMasukkan No Menu Yang Diinginkan      : ");
+
+        if(scanf("%d", &pilihan) != 1){
+            printf(">> Input salah!\n");
+            while(getchar()!='\n');
+            continue;
+        }
+        while(getchar()!='\n');
+
+        if(pilihan >= 1 && pilihan <= 10){
+            printf("\n%d. %s\n", pilihan, nama_menu[pilihan-1]);
+            printf("Jumlah Pesanan : ");
+
+            if(scanf("%d", &kuantitas) == 1 && kuantitas > 0){
+                proses_catat(pilihan, kuantitas);
+            } else {
+                printf(">> Kuantitas salah.\n");
+            }
+            while(getchar()!='\n');
+
+        } else if (pilihan == 44) {
+            jumlah_item = 0;
+            total_tagihan = 0;
+            system("cls");
+            tampilkan_menu_manual();
+
+        } else if (pilihan == 55) {
+            cetak_struk();
+            jumlah_item = 0;
+            total_tagihan = 0;
+            system("cls");
+            tampilkan_menu_manual();
+
+        } else if (pilihan == 99) {
+            system("cls");
+            printf("Apakah anda yakin ingin keluar ??\n");
+            printf("Tekan Y untuk Ya. Tekan apa saja untuk tidak\n");
+
+            konfirmasi_keluar = getchar();
+
+            while(getchar() != '\n' && getchar() != EOF);
+
+            if (konfirmasi_keluar == 'Y' || konfirmasi_keluar == 'y') {
+                printf("\nTerima kasih. Program Selesai.\n");
+            } else {
+                pilihan = 0;
+                system("cls");
+                tampilkan_menu_manual();
+            }
+        } else {
+            printf(">> Kode tidak valid.\n");
+        }
+
+    } while (pilihan != 99);
+}
+
 // Bagian Bendera
 #define RED "\033[41m"
 #define WHITE "\033[47m"
@@ -542,6 +746,8 @@ void author(){
         "\n\t\t\t\tNIM  : 672024015",
         "\n\n\t\t\t\tNama : Yehezkiel Donato Raharjo",
         "\n\t\t\t\tNIM  : 672025070"
+        "\n\n\t\t\t\tNama : Johanes Theo Adrian",
+        "\n\t\t\t\tNIM  : 672025061"
     };
 
     for(int i = 0; i < sizeof(authors) / sizeof(authors[0]); i++){
@@ -589,6 +795,8 @@ void menu(){
         Sleep(500);
         printf("\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\tTunggu sebentar...");
         Sleep(2000);
+        restoran();
+        system("cls");
         menu();
         break;
     case 3:
