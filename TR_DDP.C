@@ -310,24 +310,20 @@ void Bendera() {
     do {
         system("cls");
         printf("===================================\n");
-        printf("=             Bendera             =\n");
+        printf("||         Bendera Indonesia     ||\n");
         printf("===================================\n");
         printf("Masukkan tinggi bendera: ");
         scanf("%d", &tinggi);
-
-        printf("\nBendera Indonesia:\n");
+        printf("\nBendera Indonesia:\n\n");
         BenderaIndonesia(tinggi);
-
-        printf("\n===================================\n");
+        printf("\n");
         printf("Pilihan:\n");
         printf("1. Ulang\n");
         printf("2. Exit\n");
         printf("Pilihan Anda: ");
         scanf(" %c", &pilihan);
-
     } while (pilihan == '1');
     system("cls");
-
 }
 
 // BAGIAN PROGRAM HOTEL
