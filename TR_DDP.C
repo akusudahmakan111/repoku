@@ -6,10 +6,10 @@
 #include <time.h>
 
 // KELUAR
-void keluar()
-{
+void keluar(){
     int i;
-    for (i = 5; i >= 0; i--) {
+        Sleep(500);
+        for (i = 5; i >= 0; i--) {
         system("cls");
 
         printf("\n\n\n\n\n\n\n\n");
@@ -849,6 +849,10 @@ void menu(){
         menu();
         break;
     case 7:
+        system("cls");
+        Sleep(500);
+        printf("\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\tTunggu sebentar...");
+        Sleep(2000);
         keluar();
         break;
     default:
