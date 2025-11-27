@@ -8,7 +8,6 @@
 // KELUAR
 void keluar(){
     int i;
-        Sleep(500);
         for (i = 5; i >= 0; i--) {
         system("cls");
 
