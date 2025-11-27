@@ -5,6 +5,24 @@
 #include <windows.h>
 #include <time.h>
 
+// KELUAR
+void keluar()
+{
+    int i;
+    for (i = 5; i >= 0; i--) {
+        system("cls");
+
+        printf("\n\n\n\n\n\n\n\n");
+        printf("\t\t\t\t\t  +----------------------------+\n");
+        printf("\t\t\t\t\t  |        TERIMA KASIH        |\n");
+        printf("\t\t\t\t\t  |        #FTIUKSW2025        |\n");
+        printf("\t\t\t\t\t  +----------------------------+\n\n");
+        printf("\t\t\t\t\t       Closing in %d seconds\n", i);
+        printf("\n\n\n\n\n\n\n");
+        Sleep(1000);
+    }
+}
+
 // BAGIAN BATU GUNTING KERTAS
 void pvc()
 {
@@ -734,8 +752,6 @@ void author(){
     }
 
     const char* authors[] = {
-        "\n\n\t\t\t\tNama : Nama kalian",
-        "\n\t\t\t\tNIM  : Nim kalian",
         "\n\n\t\t\t\tNama : Mitchell Ardiza Wijayanto",
         "\n\t\t\t\tNIM  : 672025072",
         "\n\n\t\t\t\tNama : Mikhael Gusti Hamurdani",
@@ -833,6 +849,7 @@ void menu(){
         menu();
         break;
     case 7:
+        keluar();
         break;
     default:
         printf("\n\n\n\n\n\n\n\n\n\t\t\t\tPilihan anda tidak ada di menu, silahkan pilih lagi!\n");
